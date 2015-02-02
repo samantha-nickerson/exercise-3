@@ -12,11 +12,9 @@ html {
   text-size-adjust: 100%;
 }
 
-
 *, *:before, *:after {
   box-sizing: inherit;
 }
-
 
 body{
   font-family: $opensans;
@@ -44,6 +42,7 @@ h1{
 }
 
 .toggle-btn {
+  @include btn($primary-shadow, $primary, $secondary);
   position: absolute;
   right: 0.6em;
   top: 1.6em;
@@ -64,15 +63,16 @@ h1{
       padding: 1em 1em; 
       text-align: center;
       color: $primary;
-      border-bottom: 1px solid $primary;
       text-decoration: none;
+    }
+    .link{
+      @include menu($thin-box-shadow, $white, $secondary);
     }
   }
 }
 
 .toggle-btn,
 .close-btn {
-  color: $primary;
   height: 40px;
   width: 40px;
   span{
@@ -81,7 +81,7 @@ h1{
 }
 
 .close-btn{
-  background-color: $white;
+  @include btn($primary-shadow, $white, $secondary);
   position: relative;
   left: 1.6em;
   top: 1.6em;
@@ -132,14 +132,7 @@ h1{
     right: auto;
   }
 
-  .donate {
-    float: right;
-    border: 3px solid $primary;
-  }
-  
-
   .navigation ul {
-    background-color: $white;
     @include zero;
     li {
       display: inline-block;
@@ -148,9 +141,15 @@ h1{
         border-top: 0;
       }
       a{
+        @include link($primary-shadow, $primary, $secondary);
         border-bottom: 0;
         padding: 0.5em 0.5em;
       }
     }
+  }
+
+  .donate {
+    @include link($primary-shadow, $primary, $secondary);
+    float: right;
   }
 }

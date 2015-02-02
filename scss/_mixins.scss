@@ -26,3 +26,30 @@
   white-space: normal;
   overflow: visible;
 }
+
+@mixin link($box-shadow, $color, $hover){
+  box-shadow: $box-shadow;
+  transition: all 150ms ease-in-out;
+  color: $color;
+  &:hover{
+    color: $hover;
+  }
+}
+
+@mixin menu($box-shadow, $hover, $bg-hover){
+  box-shadow: $box-shadow;
+  transition: all 150ms ease-in-out;
+  &:hover{
+    color: $hover;
+    background-color: $bg-hover;
+  }
+}
+
+@mixin btn($box-shadow, $color, $hover){
+  box-shadow: $box-shadow;
+  transition: all 150ms ease-in-out;
+  color: $color;
+  &:hover{
+    color: $hover;
+  }
+}
