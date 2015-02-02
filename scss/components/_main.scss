@@ -21,6 +21,7 @@ html {
 body{
   font-family: $opensans;
   color: $text-color;
+  background-color: $dark-blue;
   @include zero;
   // Hides close button if there is no js
   &.noscript .close-btn,
@@ -32,6 +33,8 @@ body{
 header {
   padding: 0 1em;
   position: relative;
+  background-color: #fff;
+  height: 5em;
 }
 
 .toggle-btn {
@@ -41,6 +44,7 @@ header {
 }
 
 .navigation ul {
+  background-color: #fff;
   @include zero;
   li {
     list-style-type: none;
@@ -50,31 +54,30 @@ header {
     }
     a{
       display: block;
-      padding: .5em 1em; 
+      padding: 1em 1em; 
       text-align: center;
       border-bottom: 1px solid $light-grey;
       text-decoration: none;
-    
     }
   }
 }
 
 .toggle-btn,
 .close-btn {
-  color: $text-color;
+  color: $icon-color;
   height: 40px;
   width: 40px;
   span{
     @include hide-text;
   }
   i{
-  border: 1px solid $text-color;
-  padding: .5em;
+  border: 2px solid $light-grey;
   
   }
 }
 
 .close-btn{
+  background-color: #fff;
   margin: 1em;
 } 
 
@@ -88,7 +91,7 @@ header {
       width: 100%;
       height: 100%;
       position: relative;
-      transform: translateX(0);
+      transition: translateX(0);
       @include ease(all, 300ms, ease-in-out);
     }
 
@@ -108,7 +111,6 @@ header {
     top: 0;
     bottom: 0;
     right: -100%;
-    min-height: 600px;
   }
 }
 
@@ -116,10 +118,17 @@ header {
   .toggle-btn,
   .close-btn{
     display: none;
-    }
   }
+
 
   body.noscript .slide-menu{
     position: static;
     right: auto;
   }
+
+  .navigation ul{
+    li {
+    display: inline-block;
+    }
+  } 
+}
