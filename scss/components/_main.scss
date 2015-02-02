@@ -20,8 +20,7 @@ html {
 
 body{
   font-family: $opensans;
-  color: $text-color;
-  background-color: $dark-blue;
+  background-color: $primary;
   @include zero;
   // Hides close button if there is no js
   &.noscript .close-btn,
@@ -31,32 +30,41 @@ body{
 }
 
 header {
-  padding: 0 1em;
+  padding-top: 0.6em;
+  padding-left: 1em;
+  padding-right: 1em;
   position: relative;
-  background-color: #fff;
-  height: 5em;
+  background-color: $white;
+  height: 4em;
+}
+
+h1{
+  color: $white;
+  text-align: center;
 }
 
 .toggle-btn {
   position: absolute;
-  right: 1em;
-  top: 0;
+  right: 0.6em;
+  top: 1.6em;
 }
 
 .navigation ul {
-  background-color: #fff;
+  background-color: $white;
   @include zero;
+  margin-top: 1.6em;
   li {
     list-style-type: none;
     &:first-child 
     a{
-      border-top: 1px solid $light-grey;
+      border-top: 1px solid $primary;
     }
     a{
       display: block;
       padding: 1em 1em; 
       text-align: center;
-      border-bottom: 1px solid $light-grey;
+      color: $primary;
+      border-bottom: 1px solid $primary;
       text-decoration: none;
     }
   }
@@ -64,24 +72,22 @@ header {
 
 .toggle-btn,
 .close-btn {
-  color: $icon-color;
+  color: $primary;
   height: 40px;
   width: 40px;
   span{
     @include hide-text;
   }
-  i{
-  border: 2px solid $light-grey;
-  
-  }
 }
 
 .close-btn{
-  background-color: #fff;
-  margin: 1em;
+  background-color: $white;
+  position: relative;
+  left: 1.6em;
+  top: 1.6em;
 } 
 
-@media only screen and (max-width: 60em){
+@media only screen and (max-width: 30em){
   .site-wrapper{
     position: relative;
     overflow: hidden;
@@ -114,7 +120,7 @@ header {
   }
 }
 
-@media only screen and (min-width: 60em){ 
+@media only screen and (min-width: 30em){ 
   .toggle-btn,
   .close-btn{
     display: none;
@@ -126,9 +132,25 @@ header {
     right: auto;
   }
 
-  .navigation ul{
+  .donate {
+    float: right;
+    border: 3px solid $primary;
+  }
+  
+
+  .navigation ul {
+    background-color: $white;
+    @include zero;
     li {
-    display: inline-block;
+      display: inline-block;
+      &:first-child 
+      a{
+        border-top: 0;
+      }
+      a{
+        border-bottom: 0;
+        padding: 0.5em 0.5em;
+      }
     }
-  } 
+  }
 }
